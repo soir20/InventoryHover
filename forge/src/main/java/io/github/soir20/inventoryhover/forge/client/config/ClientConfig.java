@@ -6,8 +6,11 @@ public class ClientConfig {
     private final ForgeConfigSpec.ConfigValue<Boolean> DEFAULT_COLOR_HIGHLIGHT;
 
     public ClientConfig(ForgeConfigSpec.Builder configBuilder) {
-        configBuilder.push("category1");
-        DEFAULT_COLOR_HIGHLIGHT = configBuilder.worldRestart().comment("desc").define("Default highlight", true);
+        configBuilder.push("vanilla");
+        DEFAULT_COLOR_HIGHLIGHT = configBuilder
+                .worldRestart()
+                .comment("Whether to enable the vanilla slot hover overlay/highlight. May require world restart.")
+                .define("default-overlay", true);
         configBuilder.pop();
     }
 
