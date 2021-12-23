@@ -3,16 +3,20 @@ package io.github.soir20.inventoryhover.forge.client.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ClientConfig {
-    private final ForgeConfigSpec.ConfigValue<Boolean> disableColorHighlight;
+    private final ForgeConfigSpec.ConfigValue<Boolean> DEFAULT_COLOR_HIGHLIGHT;
 
     public ClientConfig(ForgeConfigSpec.Builder configBuilder) {
         configBuilder.push("category1");
-        disableColorHighlight = configBuilder.comment("desc").define("Disable default highlight", false);
+        DEFAULT_COLOR_HIGHLIGHT = configBuilder.worldRestart().comment("desc").define("Default highlight", true);
         configBuilder.pop();
     }
 
-    public boolean disableColorHighlight() {
-        return disableColorHighlight.get();
+    public boolean defaultHighlight() {
+        return DEFAULT_COLOR_HIGHLIGHT.get();
+    }
+
+    public void setDefaultHighlight(boolean isEnabled) {
+        DEFAULT_COLOR_HIGHLIGHT.set(isEnabled);
     }
 
 }

@@ -23,7 +23,7 @@ public class GUIDrawEventSubscriber {
 
     @SubscribeEvent
     public void backgroundDrawEvent(final GuiContainerEvent.DrawBackground event) {
-        if (!CONFIG.disableColorHighlight()) {
+        if (CONFIG.defaultHighlight()) {
             return;
         }
 
