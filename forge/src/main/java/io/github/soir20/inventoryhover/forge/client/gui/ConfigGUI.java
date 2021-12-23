@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.soir20.inventoryhover.forge.InventoryHoverForge;
 import io.github.soir20.inventoryhover.forge.client.config.ClientConfig;
 import net.minecraft.client.BooleanOption;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.OptionsList;
 import net.minecraft.client.gui.screens.Screen;
@@ -40,7 +39,7 @@ public final class ConfigGUI extends Screen {
     @Override
     public void onClose() {
         CONFIG_SPEC.save();
-        Minecraft.getInstance().setScreen(PARENT_SCREEN);
+        requireNonNull(minecraft, "Client cannot be null").setScreen(PARENT_SCREEN);
     }
 
     @Override
@@ -49,7 +48,7 @@ public final class ConfigGUI extends Screen {
         int itemHeight = 25;
 
         options = new OptionsList(
-                Minecraft.getInstance(),
+                requireNonNull(minecraft, "Client cannot be null"),
                 width, height,
                 verticalMargin, height - verticalMargin,
                 itemHeight
