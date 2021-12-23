@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "moremcmeta",
+  "version": "${version}",
+  "name": "MoreMcmeta",
+  "description": "Animate almost any Minecraft texture with more options.",
+  "authors": [
+    "soir20"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/moremcmeta",
+    "sources": "https://github.com/soir20/MoreMcmeta",
+    "issues": "https://github.com/soir20/MoreMcmeta/issues"
+  },
+  "license": "LGPL-3.0",
+  "icon": "tricolor-zombie.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.soir20.moremcmeta.fabric.MoreMcmetaFabric"
+    ]
+  },
+  "mixins": [
+    "moremcmeta.mixins.json"
+  ],
+  "accessWidener": "moremcmeta.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  }
+}
