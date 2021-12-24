@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import org.apache.logging.log4j.Logger;
 
-import static io.github.soir20.inventoryhover.forge.InventoryHoverForge.OVERLAY_LOCATION;
+import static io.github.soir20.inventoryhover.forge.EntrypointForge.OVERLAY_LOCATION;
 import static java.util.Objects.requireNonNull;
 
 @SuppressWarnings("unused")

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "moremcmeta",
+  "id": "inventoryhover",
   "version": "${version}",
-  "name": "MoreMcmeta",
+  "name": "InventoryHover",
   "description": "Animate almost any Minecraft texture with more options.",
   "authors": [
     "soir20"
@@ -17,17 +17,18 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "io.github.soir20.moremcmeta.fabric.MoreMcmetaFabric"
+      "io.github.soir20.inventoryhover.fabric.EntrypointFabric"
+    ],
+    "modmenu": [
+      "io.github.soir20.inventoryhover.fabric.EntrypointFabric"
     ]
   },
   "mixins": [
-    "moremcmeta.mixins.json"
+    "inventoryhover.mixins.json"
   ],
-  "accessWidener": "moremcmeta.accesswidener",
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "fabricloader": ">=0.7.4",
+    "minecraft": "1.16.x",
+    "java": ">=8"
   }
 }

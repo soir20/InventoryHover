@@ -1,7 +1,7 @@
 package io.github.soir20.inventoryhover.forge.client.gui;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import io.github.soir20.inventoryhover.forge.InventoryHoverForge;
+import io.github.soir20.inventoryhover.forge.EntrypointForge;
 import io.github.soir20.inventoryhover.forge.client.config.ClientConfig;
 import net.minecraft.client.BooleanOption;
 import net.minecraft.client.gui.components.Button;
@@ -20,7 +20,7 @@ public final class ConfigGUI extends Screen {
     private OptionsList options;
 
     public ConfigGUI(ClientConfig config, ForgeConfigSpec configSpec, Screen parentScreen) {
-        super(new TranslatableComponent(InventoryHoverForge.MODID + ".config.title"));
+        super(new TranslatableComponent(EntrypointForge.MODID + ".config.title"));
         CONFIG = requireNonNull(config, "Config cannot be null");
         CONFIG_SPEC = requireNonNull(configSpec, "Config spec cannot be null");
         PARENT_SCREEN = requireNonNull(parentScreen, "Parent screen cannot be null");
@@ -55,7 +55,7 @@ public final class ConfigGUI extends Screen {
         );
 
         options.addBig(new BooleanOption(
-                InventoryHoverForge.MODID + ".config.defaultoverlay",
+                EntrypointForge.MODID + ".config.defaultoverlay",
                 unused -> CONFIG.defaultHighlight(),
                 (unused, isEnabled) -> CONFIG.setDefaultHighlight(isEnabled)
         ));
